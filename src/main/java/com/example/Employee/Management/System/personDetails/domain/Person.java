@@ -22,7 +22,7 @@ public class Person {
 
     @NotNull(message = "The address of the person in mandatory")
     @OneToOne
-    @JoinColumn(name = "address")
+    @JoinColumn(name = "address", nullable = false)
     private Address address;
 
     @NotNull(message = "Created date cannot be null")
@@ -66,7 +66,7 @@ public class Person {
 
     @NotNull(message = "Marital status cannot be null")
     @Enumerated(EnumType.STRING)
-    @Column(name = "marital_status", nullable = false, updatable = false)
+    @Column(name = "marital_status", updatable = false)
     private MaritalStatus maritalStatus;
 
     @Column(name = "middle_name")
@@ -96,35 +96,25 @@ public class Person {
     }
 
     public Person(final String firstName,
-                  final String middleName,
                   final String lastName,
                   final Date dob,
                   final String phoneNumber,
                   final String emailId,
                   final Address address,
                   final Gender gender,
-                  final Nationality nationality,
                   final String idNumber,
                   final String identificationType,
-                  final MaritalStatus maritalStatus,
-                  final Health health,
-                  final Family family,
-                  final String filePath) {
+                  final MaritalStatus maritalStatus) {
         setAddress(address);
         setDob(dob);
         setEmailId(emailId);
         setFirstName(firstName);
-        setFilePath(filePath);
         setGender(gender);
         setIdNumber(idNumber);
         setIdentificationType(identificationType);
         setLastName(lastName);
         setMaritalStatus(maritalStatus);
-        setMiddleName(middleName);
-        setNationality(nationality);
         setPhoneNumber(phoneNumber);
-        setHealth(health);
-        setFamily(family);
     }
 
     /**

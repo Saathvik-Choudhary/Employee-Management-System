@@ -2,7 +2,6 @@ package com.example.Employee.Management.System.employeeDetails.domain;
 
 import com.example.Employee.Management.System.personDetails.domain.Person;
 import jakarta.persistence.*;
-import org.springframework.stereotype.Repository;
 
 @Entity
 @Table(name = "employee")
@@ -22,5 +21,4 @@ public class Employee {
     @Column(name = "designation", nullable = false, updatable = false)
     private String designation;
 
-    @Column()
 }
