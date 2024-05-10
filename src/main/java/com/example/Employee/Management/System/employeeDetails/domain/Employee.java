@@ -8,7 +8,7 @@ import jakarta.persistence.*;
 public class Employee {
 
     @Id
-    @Column(name = "emplyee_id")
+    @Column(name = "employee_id")
     private Long employeeId;
 
     @OneToOne
